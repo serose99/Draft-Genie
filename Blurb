@@ -1,0 +1,7 @@
+Draft Genie is an intuitive machine learning model used to predict when college players will potentially be drafted
+during the nba draft. It uses many python packages such as Pandas, Numpy, and scikit-learn to read in data and produce
+a model. It uses draft data from 1990 to present day to create the model and maximize accuracy. This was written by 
+the brilliant minds of Sam Rosenberg and Justin Kramer. Justin primarily focused on the front end and produced the
+beautifully looking website you see right now. He used HTML, CSS and Javscript to create the website. Sam worked primarily
+on the backend and developed the machine learning algorithm used to predict when players will be drafted. He used mainly 
+python and its various packages to create a model and then extensively tested using other data.
