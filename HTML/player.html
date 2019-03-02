@@ -95,7 +95,7 @@ else{
 	if(localStorage.getItem("PPG") < 5){
       draft = Math.floor((Math.random() * 256) + 1);
     }
-	if(localStorage.getItem("PPG") < 2){
+	if(localStorage.getItem("PPG") <= 2){
       draft = "NOT DRAFTED";
     }
 	document.getElementById("Draft").innerHTML += draft;
