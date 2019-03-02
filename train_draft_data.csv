@@ -33,7 +33,7 @@ Pk,Tm,Player,College,Yrs,G,MP,PTS,TRB,AST,FG%,3P%,FT%,MPG,PPG,RPG,APG,WS,WS/48,B
 32,MEM,Jevon Carter,West Virginia University,1,26,384,73,35,45,0.241,0.232,0.615,14.8,2.8,1.3,1.7,-0.6,-0.071,-6.1,-0.4
 33,DAL,Jalen Brunson,Villanova University,1,53,997,398,111,134,0.445,0.37,0.686,18.8,7.5,2.1,2.5,1.3,0.062,-3,-0.3
 34,ATL,Devonte' Graham,University of Kansas,1,31,403,135,37,68,0.369,0.307,0.727,13,4.4,1.2,2.2,0.4,0.042,-4,-0.2
-35,ORL,Melvin Frazier,Tulane University,1,7,32,12,3,0,0.429,0,,4.6,1.7,0.4,0,/home/srosenberg/Documents/Python/Titanic/titanic.py,-0.046,-11.7,-0.1
+35,ORL,Melvin Frazier,Tulane University,1,7,32,12,3,0,0.429,0,,4.6,1.7,0.4,0,0,-0.046,-11.7,-0.1
 36,NYK,Mitchell Robinson,,1,46,854,302,234,25,0.696,,0.568,18.6,6.6,5.1,0.5,3.8,0.214,6.7,1.9
 37,SAC,Gary Trent,Duke University,1,9,38,14,4,1,0.263,0.333,0.25,4.2,1.6,0.4,0.1,-0.1,-0.153,-13.6,-0.1
 38,PHI,Khyri Thomas,Creighton University,1,18,158,50,15,5,0.354,0.345,0.667,8.8,2.8,0.8,0.3,0.2,0.052,-3.4,-0.1
