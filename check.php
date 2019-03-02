@@ -1,5 +1,6 @@
 <?php
 $x = 5;
-print $x;
+
+echo $x;
 
 ?>
