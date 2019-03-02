@@ -1,0 +1,30 @@
+<div class="form block cf default">
+	<form method="post" onsubmit="save_data()" id="theForm" action="https://draft-genie.webnode.com/player-information/">
+
+		<fieldset class="form-fieldset">
+<div><div class="form-input form-text cf wnd-form-field wnd-required">
+	<label for="field-wnd_ShortTextField_520053"><span class="inline-text">
+	<span>Player Name</span>
+</span></label>
+	<input id="theName" required="" type="text" maxlength="150">
+</div></div>
+		</fieldset>
+
+		<div class="form-submit cf button-02">
+			<button type="submit" name="send" value="wnd_FormBlock_433703">
+				<span class="text">Submit</span>
+			</button>
+		</div>
+
+	</form>
+
+	
+</div>
+
+<script> 
+function save_data() {
+  var element = document.getElementById("theForm").elements;
+  localStorage.setItem("player name", element[1].value); 
+  localStorage.setItem("sport", "NBA");
+}
+</script>
