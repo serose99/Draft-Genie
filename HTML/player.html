@@ -1,0 +1,103 @@
+<style>
+p.round2 {
+  border: 3px solid white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+p.round3 {
+  border: 4px solid yellow;
+  border-radius: 15px;
+  font-size: 45px;
+}
+</style>
+
+
+<div class="section-inner">
+		<div class="content cf wnd-no-cols">
+	<div>
+		<div class="text cf design-01">
+    <div class="text-content"><h1 class="wnd-align-center"><font class="wnd-font-size-120"><b>Player Information</b></font></h1></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="player name">Player Name : Edwardo Bargin<br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="MPG">Minutes Played Per Game: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="PPG">Points Per Game: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="RPG">Rebounds Per Game: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="APG">Assists Per Game: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="WS">Win Share: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="BPM">Box Plus/Minus: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round2" id="VORP">Value Over Replacement Player: <br></p></div>
+</div><div class="text cf design-01">
+    <div class="text-content"><p class="round3" id="Draft">Draft Position: <br></p></div>
+</div>
+	</div></div></div>
+
+<script>
+if(localStorage.getItem("sport") == "NBA"){
+	document.getElementById("player name").innerHTML += localStorage.getItem("player name");
+	document.getElementById("MPG").innerHTML += localStorage.getItem("MPG");
+	document.getElementById("PPG").innerHTML += localStorage.getItem("PPG");
+	document.getElementById("RPG").innerHTML += localStorage.getItem("RPG");
+	document.getElementById("APG").innerHTML += localStorage.getItem("APG");
+	document.getElementById("WS").innerHTML += localStorage.getItem("WS");
+    document.getElementById("BPM").innerHTML += localStorage.getItem("BPM");
+	document.getElementById("VORP").innerHTML += localStorage.getItem("VORP");
+    var draft = Math.floor((Math.random() * 15) + 1);
+    if(localStorage.getItem("PPG") > 25){
+      draft = Math.floor((Math.random() * 9) + 1);
+    }
+    if(localStorage.getItem("PPG") > 30){
+      draft = Math.floor((Math.random() * 4) + 1);
+    }
+	if(localStorage.getItem("PPG") > 40){
+      draft = Math.floor((Math.random() * 2) + 1);
+    }
+	if(localStorage.getItem("PPG") < 25){
+      draft = Math.floor((Math.random() * 30) + 1);
+    }
+	if(localStorage.getItem("PPG") < 18){
+      draft = Math.floor((Math.random() * 60) + 1);
+    }
+	if(localStorage.getItem("PPG") < 10){
+      draft = "NOT DRAFTED";
+    }
+	
+	document.getElementById("Draft").innerHTML += draft;
+}
+else{
+	document.getElementById("player name").innerHTML = "Player Name: " + localStorage.getItem("player name");
+	document.getElementById("MPG").innerHTML = "Position: " + localStorage.getItem("POS");
+	document.getElementById("PPG").innerHTML = "Player Rating: " + localStorage.getItem("PR");
+	document.getElementById("RPG").style.visibility = "hidden";    
+	document.getElementById("APG").style.visibility = "hidden";    
+	document.getElementById("WS").style.visibility = "hidden";    
+    document.getElementById("BPM").style.visibility = "hidden";    
+	document.getElementById("VORP").style.visibility = "hidden";    
+	
+	var draft = Math.floor((Math.random() * 15) + 1);
+    if(localStorage.getItem("PPG") > 5){
+      draft = Math.floor((Math.random() * 30) + 1);
+    }
+    if(localStorage.getItem("PPG") > 7){
+      draft = Math.floor((Math.random() * 15) + 1);
+    }
+	if(localStorage.getItem("PPG") > 9){
+      draft = Math.floor((Math.random() * 5) + 1);
+	  console.log(draft);
+    }
+	
+	if(localStorage.getItem("PPG") < 5){
+      draft = Math.floor((Math.random() * 256) + 1);
+    }
+	if(localStorage.getItem("PPG") < 2){
+      draft = "NOT DRAFTED";
+    }
+	document.getElementById("Draft").innerHTML += draft;
+}
+</script>
