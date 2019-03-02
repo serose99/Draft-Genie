@@ -1,10 +1,19 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
 
+#1996
 train_data = pd.read_csv("train_draft_data.csv")
-#train_data = train_data.dropna(axis=0)
 #print(train_data)
+
+def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
+    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)
+    model.fit(train_X, train_y)
+    preds_val = model.predict(val_X)
+    mae = mean_absolute_error(val_y, preds_val)
+    return(mae)
 
 def get_rid_of_nulls(train_data):
 	null_columns = ["MPG","PPG","RPG","APG","WS","BPM","VORP"]
@@ -25,16 +34,34 @@ def get_rid_of_nulls(train_data):
 	train_data.to_csv("no_empties.csv")
 
 #get_rid_of_nulls(train_data)
+train_data = pd.read_csv("no_empties.csv")
+train_data = train_data.dropna(axis=0)
 
 features = ["MPG","PPG","RPG","APG","WS","BPM","VORP"]
 X = train_data[features]
 y = train_data.Pk
 
-#train_model = DecisionTreeRegressor(random_state=1)
-#train_model.fit(X,y)
-#train_pred = train_model.predict(X)
+train_X,val_X,train_y,val_y = train_test_split(X,y,random_state=0)
+
+###Determine best number of nodes
+#candidate_max_leaf_nodes =[5,10,15,25,50,100,250,500]
+#scores = {leaf_size: get_mae(leaf_size, train_X, val_X, train_y, val_y) for leaf_size in candidate_max_leaf_nodes}
+#best_tree_size = min(scores, key=scores.get) #50
+#print(best_tree_size)
+
+train_model = DecisionTreeRegressor(max_leaf_nodes=5, random_state=1)
+train_model.fit(train_X,train_y)
+train_pred = train_model.predict(val_X)
+
+#train_model = RandomForestRegressor(random_state=1)
+#train_model.fit(train_X,train_y)
+#train_pred = train_model.predict(val_X)
 #print(train_pred)
 
-test_X = [15,15,4,3,1,.5,0]
-#test_pred = train_model.predict(test_X)
-#print(test_pred)
+#train_mae = mean_absolute_error(train_pred,val_y)
+#print(train_mae)
+
+
+test_X = [30,20,5,3,1,.5,0]
+test_pred = train_model.predict(test_X)
+print(int(test_pred))
