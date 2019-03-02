@@ -39,7 +39,7 @@ def get_rid_of_nulls(train_data):
 train_data = pd.read_csv("no_empties.csv")
 train_data = train_data.dropna(axis=0)
 
-#print(train_data[null_columns].describe())
+#print(train_data[].describe())
 
 features = ["MPG","PPG","RPG","APG","WS/48","BPM","VORP"]
 X = train_data[features]
@@ -96,6 +96,14 @@ if pd.isnull(data["BPM"].iloc[0]):
 vorp= data.at[0,"VORP"]
 if pd.isnull(data["VORP"].iloc[0]):
 	vorp = train_data["VORP"].mean()
+####backup
+#mpg = (int(input("Enter in minutes per game, range(2,41): ")))
+#ppg = (int(input("Enter in points per game, range(0,27): ")))
+#rpg = (int(input("Enter in rebounds per game, range(0,10): ")))
+#apg = (int(input("Enter in assists per game, range(0,9): ")))
+#ws48 = (float(input("Enter in win share per 48 mintues, range(-.5,.5): ")))
+#bpm = (int(input("Enter in box plus/minus, range(-23,20): ")))
+#vorp = (int(input("Enter in value over replacement player, range(0,10): ")))
 
 print("MPG:{} PPG:{} RPG:{} APG:{} WS:{:.2f} BPM:{} VORP:{} ".format(mpg,ppg,rpg,apg,ws48,bpm,vorp),end="\n\n")
 test_X = ([[mpg,ppg,rpg,apg,ws48,bpm,vorp]])
