@@ -1,1 +1,5 @@
-<?php echo '<p>Hello World</p>'; ?>
+<?php
+
+print "<p>Hello World</p>";
+
+?>
