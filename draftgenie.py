@@ -66,30 +66,38 @@ train_pred = train_model.predict(X)
 #train_mae = mean_absolute_error(train_pred,y)
 #print(train_mae)
 
-mpg= random.randint(2,41)
-if mpg==None:
+data = pd.read_csv("https://docs.google.com/spreadsheets/u/0/d/1_Ku5z1ZmroFhRuC6Pn37QZrbrMi_71ije-SypV8Woyw/export?format=csv&id=1_Ku5z1ZmroFhRuC6Pn37QZrbrMi_71ije-SypV8Woyw&gid=0")
+#print(data)
+
+mpg= data.at[0,"MPG"]
+if pd.isnull(data["MPG"].iloc[0]):
 	mpg = train_data["MPG"].mean()
-ppg= random.randint(0,27)
-if ppg==None:
+
+ppg= data.at[0,"PPG"]
+if pd.isnull(data["PPG"].iloc[0]):
 	ppg = train_data["PPG"].mean()
-rpg= random.randint(0,13)
-if rpg==None:
+
+rpg= data.at[0,"RPG"]
+if pd.isnull(data["RPG"].iloc[0]):
 	rpg = train_data["RPG"].mean()
-apg= random.randint(0,9)
-if apg==None:
+
+apg= data.at[0,"APG"]
+if pd.isnull(data["APG"].iloc[0]):
 	apg = train_data["APG"].mean()
-ws48= random.uniform(-.597,1.367)
-if ws48==None:
+
+ws48= data.at[0,"WS/48"]
+if pd.isnull(data["WS/48"].iloc[0]):
 	ws48 = train_data["WS/48"].mean()
-bpm=  random.randint(-23,19)
-if bpm==None:
+
+bpm=  data.at[0,"BPM"]
+if pd.isnull(data["BPM"].iloc[0]):
 	bpm = train_data["BPM"].mean()
-vorp= random.randint(-8,89)
-if vorp==None:
+
+vorp= data.at[0,"VORP"]
+if pd.isnull(data["VORP"].iloc[0]):
 	vorp = train_data["VORP"].mean()
 
-
-print("MPG:{} PPG:{} RPG:{} APG:{} WS:{:.2f} BPM:{} VORP:{} ".format(mpg,ppg,rpg,apg,ws48,bpm,vorp))
+print("MPG:{} PPG:{} RPG:{} APG:{} WS:{:.2f} BPM:{} VORP:{} ".format(mpg,ppg,rpg,apg,ws48,bpm,vorp),end="\n\n")
 test_X = ([[mpg,ppg,rpg,apg,ws48,bpm,vorp]])
 test_pred = train_model.predict(test_X)
-print(int(test_pred))
+print("Projected draft pick number: {}".format(int(test_pred)))
