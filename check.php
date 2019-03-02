@@ -1,5 +1,5 @@
 <?php
-
-print "<p>Hello World</p>";
+$x = 5;
+print $x;
 
 ?>
