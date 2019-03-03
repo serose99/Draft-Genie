@@ -1,4 +1,6 @@
 # Draft-Genie
+SteelHacks 2019
+
 A Python-based application to predict if a player will be drafted/when they will be drafted based on their statistics.
 
 TO RUN:
